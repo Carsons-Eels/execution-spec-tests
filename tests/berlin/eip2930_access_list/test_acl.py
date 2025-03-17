@@ -3,6 +3,7 @@
 import pytest
 
 from ethereum_test_tools import (
+    Access,
     AccessList,
     Account,
     Alloc,
@@ -35,9 +36,9 @@ def test_access_list(state_test: StateTestFiller, pre: Alloc):
         gas_limit=323328,
         gas_price=7,
         access_list=[
-            AccessList(
-                address="0x0000000000000000000000000000000000000000",
-                storage_keys=[
+            Access(
+                account="0x0000000000000000000000000000000000000000",
+                slots=[
                     "0x0000000000000000000000000000000000000000000000000000000000000000",
                 ],
             )
